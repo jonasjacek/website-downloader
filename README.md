@@ -2,6 +2,46 @@
 
 Small Bash script to iterate over a list of URLs and download them incl. assets.
 
+## Options
+
+The script uses [WGET](https://www.gnu.org/software/wget/manual/wget.html) to retrieve files.
+
+* `-r`  
+  Turn on recursive retrieving. See [Recursive Download](https://www.gnu.org/software/wget/manual/wget.html#Recursive-Download), for more details. The default maximum depth is 5.
+* `-x`  
+  The opposite of `-nd`— create a hierarchy of directories, even if one would not have been created otherwise.
+* `-k`  
+  After the download is complete, convert the links in the document to make them suitable for local viewing.
+* `--no-cache`  
+  Disable server-side cache.
+* `-w seconds`  
+  Wait the specified number of seconds between the retrievals.
+* `-e robots=off`  
+  Ignore and do not download robots.txt files.
+* `--progress=type`  
+  Select the type of the progress indicator you wish to use. Legal indicators are “dot” and “bar”.
+* `--show-progress`  
+  Force wget to display the progress bar in any verbosity.
+
+**Further Options**
+
+* `-a logfile`  
+  Append to logfile.
+* `-i file`  
+  Read URLs from a local or external file.
+* -`q`  
+  Turn off Wget’s output (quiet)
+* `-t number`  
+  Set number of tries to number. Specify 0 or ‘inf’ for infinite retrying.
+* `-nd`  
+  Do not create a hierarchy of directories when retrieving recursively.
+* `--no-check-certificate`  
+  Don’t check the server certificate against the available certificate authorities.
+* `‘-A "*.png"’`  
+  Specify comma-separated lists of file name suffixes or patterns to accept or reject (see [Types of Files](https://www.gnu.org/software/wget/manual/wget.html#Types-of-Files)).
+
+
+
 ## Mirrors
 
 You can find this repository at:
