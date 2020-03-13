@@ -8,8 +8,8 @@ On the command line:
 
 1. Clone repository. E.g. `git clone git@gitlab.com:jonasjacek/website-downloader.git`
 2. Go to repository. E.g. `cd website-downloader/`
-3. Add list of URL's to retrieve in `website-downloader_urls.txt`
-4. Adjust options as needed.
+3. Add list of URL's to retrieve in `website-downloader_urls.txt`.
+4. Adjust script options as needed. See [Options](#options).
 5. Run website downloader. E.g. `. website-downloader.sh`
 
 ## Options
