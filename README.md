@@ -1,6 +1,16 @@
 # Website Downloader
 
-Small Bash script to iterate over a list of URLs and download them incl. assets.
+Simple Bash script to download websites (including all assets needed to display them properly) with Wget.
+
+## Usage
+
+On the command line:
+
+1. Clone repository. E.g. `git clone git@gitlab.com:jonasjacek/website-downloader.git`
+2. Go to repository. E.g. `cd website-downloader/`
+3. Add list of URL's to retrieve in `website-downloader_urls.txt`
+4. Adjust options as needed.
+5. Run website downloader. E.g. `. website-downloader.sh`
 
 ## Options
 
