@@ -4,41 +4,51 @@ Small Bash script to iterate over a list of URLs and download them incl. assets.
 
 ## Options
 
-The script uses [WGET](https://www.gnu.org/software/wget/manual/wget.html) to retrieve files.
+The script uses [Wget](https://www.gnu.org/software/wget/manual/wget.html) to retrieve files.
 
-* `-r`  
+* `--restrict-file-names=modes`  
+  Change which characters found in remote URLs must be escaped during generation of local filenames. Values: `[unix|windows]`
+* `-r`, `--recursive`  
   Turn on recursive retrieving. See [Recursive Download](https://www.gnu.org/software/wget/manual/wget.html#Recursive-Download), for more details. The default maximum depth is 5.
-* `-x`  
+* `-x`, `--force-directories`  
   The opposite of `-nd`— create a hierarchy of directories, even if one would not have been created otherwise.
-* `-k`  
+* `-k`, `--convert-links`  
   After the download is complete, convert the links in the document to make them suitable for local viewing.
+* `-p`, `--page-requisites`  
+  This option causes Wget to download all the files that are necessary to properly display a given HTML page.
+* `-E`, `--adjust-extension`  
+  If a file of type `application/xhtml+xml` or `text/html` is downloaded and the URL does not end with the regexp `\.[Hh][Tt][Mm][Ll]?`, this option will cause the suffix `.html` to be appended to the local filename.
 * `--no-cache`  
   Disable server-side cache.
-* `-w seconds`  
+* `-w seconds`, `--wait=seconds`  
   Wait the specified number of seconds between the retrievals.
 * `-e robots=off`  
   Ignore and do not download robots.txt files.
-* `--progress=type`  
-  Select the type of the progress indicator you wish to use. Legal indicators are “dot” and “bar”.
 * `--show-progress`  
   Force wget to display the progress bar in any verbosity.
+* `--progress=type`  
+  Select the type of the progress indicator you wish to use. Legal indicators are “dot” and “bar”.
+* `-i file`, `--input-file=file`  
+  Read URLs from a local or external file.
 
 **Further Options**
 
-* `-a logfile`  
+* `-np`, `--no-parent`  
+  Do not ever ascend to the parent directory when retrieving recursively.
+* `-H`, `--span-hosts`  
+  Enable spanning across hosts when doing recursive retrieving (see [Spanning Hosts](https://www.gnu.org/software/wget/manual/wget.html#Spanning-Hosts)).
+* `-D domain-list`, `--domains=domain-list`  
+  Set domains to be followed. domain-list is a comma-separated list of domains. Note that it does not turn on `-H`.
+* `-a logfile`, `--append-output=logfile`  
   Append to logfile.
-* `-i file`  
-  Read URLs from a local or external file.
-* -`q`  
-  Turn off Wget’s output (quiet)
-* `-t number`  
+* -`q`, `--quiet`  
+  Turn off Wget’s output.
+* `-t number`, `--tries=number`  
   Set number of tries to number. Specify 0 or ‘inf’ for infinite retrying.
-* `-nd`  
+* `-nd`, `--no-directories`  
   Do not create a hierarchy of directories when retrieving recursively.
 * `--no-check-certificate`  
   Don’t check the server certificate against the available certificate authorities.
-* `‘-A "*.png"’`  
-  Specify comma-separated lists of file name suffixes or patterns to accept or reject (see [Types of Files](https://www.gnu.org/software/wget/manual/wget.html#Types-of-Files)).
 
 
 
