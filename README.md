@@ -1,6 +1,6 @@
 # Website Downloader
 
-Simple Bash script to download websites (including all assets needed to display them properly) with Wget.
+Simple Bash script to download websites (including all assets needed to display them properly) locally. The script uses [Wget](https://www.gnu.org/software/wget/manual/wget.html) to retrieve files.
 
 ## Usage
 
@@ -13,8 +13,6 @@ On the command line:
 5. Run website downloader. E.g. `. website-downloader.sh`
 
 ## Options
-
-The script uses [Wget](https://www.gnu.org/software/wget/manual/wget.html) to retrieve files.
 
 * `--restrict-file-names=modes`  
   Change which characters found in remote URLs must be escaped during generation of local filenames. Values: `[unix|windows]`
